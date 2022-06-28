@@ -1,0 +1,9 @@
+body{
+  background: blue;
+}
+.active{
+  background: red;
+}
+#tempo{
+  color: white;
+}

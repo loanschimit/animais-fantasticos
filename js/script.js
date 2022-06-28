@@ -1,0 +1,63 @@
+// Efeito ao scroll de surgimento dos itens da pagina
+import scrollWindow from "./modules/animacao-scroll.js";
+// Clicando na imagem surge o texto correspondente.
+import navtab from "./modules/nav-tab.js";
+// Scroll suave ao clicar em um link interno
+import linksDeDentro from "./modules/scroll-suave.js";
+// Efeito ao clicar nas perguntas as respostas aparecem de forma suave
+import accordionList from "./modules/accordion-list.js";
+// Abre um modal com uma tela de login
+import initModal from "./modules/modal.js";
+// Cria uma caixa de texto ao passar o mouse por cima
+import initTooltip from "./modules/tooltip.js";
+// Menu down
+import initDropDownMenu from "./modules/dropdown-menu.js";
+// Menu Mobile
+import initMenuMobile from "./modules/menu-mobile.js";
+// Verifica a data e hora de funcionamento com a data atual
+import initDateObject from "./modules/date-object.js";
+
+import initAnimaisFetch from "../animais-fetch.js";
+
+import initBitcoinFetch from "../bitcoin-fetch.js";
+import WebpackInit from "../Deverwebpack.js";
+import BabelInit from "../babel.js";
+import GitInit from "../AulaGit.js";
+
+// import $ from "jquery";
+// import _ from "lodash";
+
+// $("nav").hide();
+
+// const diferenca = _.difference(
+//   ["Banana", "Morango", "Uva"],
+//   ["Banana", "Morango", "Manga"]
+// );
+// console.log(diferenca)
+
+initBitcoinFetch();
+scrollWindow();
+navtab();
+linksDeDentro();
+accordionList();
+initModal();
+initTooltip();
+initDropDownMenu();
+initMenuMobile();
+initDateObject();
+initAnimaisFetch();
+WebpackInit();
+BabelInit();
+GitInit();
+
+// Intervalos;
+// import initSetTimeOut from "./modules/settimeout-setinterval.js";
+//  initSetTimeOut();
+
+// #####
+// import initForm from "./modules/form.js";
+// initForm();
+
+// Verifica a data e hora de funcionamento com a data atual
+// import initButtonCreator from "./modules/button-creator.js";
+// initButtonCreator();

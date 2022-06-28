@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap" rel="stylesheet">
+  <title>Animação ao Scroll|Animais Fantásticos</title>
+  <script>document.documentElement.className += ' js'</script>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+
+  <div class="grid-container">
+    <nav class="menu" data-tab="menu">
+      <button data-menu="button" aria-expanded="false" aria-controls="menu">menu</button>
+      <ul data-menu="list" id="menu">
+        <li><a href="#animais">Animais</a></li>
+        <li data-dropdown>
+          <a href="sobre.html">Sobre</a>
+          <ul class="dropdown-menu">
+            <li><a href="empresa.html">Empresa</a></li>
+            <li><a href="equipe.html">Equipe</a></li>
+            <li><a href="socios.html">Sócios</a></li>
+            <li><a href="investidores.html">Investidores</a></li>
+          </ul>
+        </li>
+        <li><a href="#faq">Faq</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a data-modal="abrir" href="login.html">Login →</a></li>
+      </ul>
+    </nav>
+    <section class="grid-section animais" data-tab="scroll" id="animais">
+      <h1 class="titulo">Animais Fantásticos</h1>
+      <ul class="animais-lista" data-tab="menu">
+        <li>
+          <img src="./img/imagem1.jpg" alt="">
+        </li>
+        <li>
+          <img src="./img/imagem2.jpg" alt="">
+        </li>
+        <li>
+          <img src="./img/imagem3.jpg" alt="">
+        </li>
+        <li>
+          <img src="./img/imagem4.jpg" alt="">
+        </li>
+        <li>
+          <img src="./img/imagem5.jpg" alt="">
+        </li>
+        <li>
+          <img src="./img/imagem6.jpg" alt="">
+        </li>
+
+
+      </ul>
+      <div class="animais-descricao" data-tab="content">
+        <section data-anime="show-down">
+          <h2>Raposa</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi et necessitatibus sapiente ullam rerum, officia reprehenderit. Ipsum consequuntur ad, quidem iusto recusandae esse? Tempora placeat autem, vero laborum delectus quia.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, obcaecati! Consectetur recusandae harum ullam facilis itaque nulla est tempora saepe in et, nam eaque laboriosam. Quia, molestias fugiat! Soluta, velit!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta reprehenderit, expedita facilis vel nostrum libero minima pariatur explicabo. Similique dolore, vitae adipisci sunt ipsum voluptate impedit mollitia veniam recusandae doloribus.</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui eum facere quia earum nisi similique quasi, quas, enim id minima libero, optio dolorum possimus? Labore officia quaerat consequuntur iusto debitis.</p>
+        </section>
+        <section data-anime="show-right">
+          <h2>Esquilo</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi et necessitatibus sapiente ullam rerum, officia reprehenderit. Ipsum consequuntur ad, quidem iusto recusandae esse? Tempora placeat autem, vero laborum delectus quia.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, obcaecati! Consectetur recusandae harum ullam facilis itaque nulla est tempora saepe in et, nam eaque laboriosam. Quia, molestias fugiat! Soluta, velit!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta reprehenderit, expedita facilis vel nostrum libero minima pariatur explicabo. Similique dolore, vitae adipisci sunt ipsum voluptate impedit mollitia veniam recusandae doloribus.</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui eum facere quia earum nisi similique quasi, quas, enim id minima libero, optio dolorum possimus? Labore officia quaerat consequuntur iusto debitis.</p>
+        </section>
+        <section data-anime="show-down">
+          <h2>Urso</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi et necessitatibus sapiente ullam rerum, officia reprehenderit. Ipsum consequuntur ad, quidem iusto recusandae esse? Tempora placeat autem, vero laborum delectus quia.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, obcaecati! Consectetur recusandae harum ullam facilis itaque nulla est tempora saepe in et, nam eaque laboriosam. Quia, molestias fugiat! Soluta, velit!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta reprehenderit, expedita facilis vel nostrum libero minima pariatur explicabo. Similique dolore, vitae adipisci sunt ipsum voluptate impedit mollitia veniam recusandae doloribus.</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui eum facere quia earum nisi similique quasi, quas, enim id minima libero, optio dolorum possimus? Labore officia quaerat consequuntur iusto debitis.</p>
+        </section>
+        <section data-anime="show-right">
+          <h2>Lobo</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi et necessitatibus sapiente ullam rerum, officia reprehenderit. Ipsum consequuntur ad, quidem iusto recusandae esse? Tempora placeat autem, vero laborum delectus quia.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, obcaecati! Consectetur recusandae harum ullam facilis itaque nulla est tempora saepe in et, nam eaque laboriosam. Quia, molestias fugiat! Soluta, velit!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta reprehenderit, expedita facilis vel nostrum libero minima pariatur explicabo. Similique dolore, vitae adipisci sunt ipsum voluptate impedit mollitia veniam recusandae doloribus.</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui eum facere quia earum nisi similique quasi, quas, enim id minima libero, optio dolorum possimus? Labore officia quaerat consequuntur iusto debitis.</p>
+        </section>
+        <section data-anime="show-down">
+          <h2>Macaco</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi et necessitatibus sapiente ullam rerum, officia reprehenderit. Ipsum consequuntur ad, quidem iusto recusandae esse? Tempora placeat autem, vero laborum delectus quia.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, obcaecati! Consectetur recusandae harum ullam facilis itaque nulla est tempora saepe in et, nam eaque laboriosam. Quia, molestias fugiat! Soluta, velit!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta reprehenderit, expedita facilis vel nostrum libero minima pariatur explicabo. Similique dolore, vitae adipisci sunt ipsum voluptate impedit mollitia veniam recusandae doloribus.</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui eum facere quia earum nisi similique quasi, quas, enim id minima libero, optio dolorum possimus? Labore officia quaerat consequuntur iusto debitis.</p>
+        </section>
+        <section data-anime="show-right">
+          <h2>Leão</h2>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi et necessitatibus sapiente ullam rerum, officia reprehenderit. Ipsum consequuntur ad, quidem iusto recusandae esse? Tempora placeat autem, vero laborum delectus quia.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, obcaecati! Consectetur recusandae harum ullam facilis itaque nulla est tempora saepe in et, nam eaque laboriosam. Quia, molestias fugiat! Soluta, velit!</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta reprehenderit, expedita facilis vel nostrum libero minima pariatur explicabo. Similique dolore, vitae adipisci sunt ipsum voluptate impedit mollitia veniam recusandae doloribus.</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui eum facere quia earum nisi similique quasi, quas, enim id minima libero, optio dolorum possimus? Labore officia quaerat consequuntur iusto debitis.</p>
+        </section>
+      </div>
+    </section>
+    <section class="grid-section faq" id="faq" data-tab="scroll">
+      <h1 class="titulo">FAQ</h1>
+      <dl class="faq-lista" data-anime="accordion">
+        <dt>Qual a idade dos animais?</dt>
+        <dd>A cronologia canina segue mais ou menos assim: aos 2 anos, a idade equivale a 42 anos; aos 4 anos, 52; aos 7 anos, com idade equivalente a aproximadamente 60 anos para um homem, o envelhecimento desacelera bruscamente, tanto que aos 9 a idade equivale a 65 anos humanos.</dd>
+        <dt>Qual a idade dos animais?</dt>
+        <dd>A cronologia canina segue mais ou menos assim: aos 2 anos, a idade equivale a 42 anos; aos 4 anos, 52; aos 7 anos, com idade equivalente a aproximadamente 60 anos para um homem, o envelhecimento desacelera bruscamente, tanto que aos 9 a idade equivale a 65 anos humanos.</dd>
+        <dt>Qual a idade dos animais?</dt>
+        <dd>A cronologia canina segue mais ou menos assim: aos 2 anos, a idade equivale a 42 anos; aos 4 anos, 52; aos 7 anos, com idade equivalente a aproximadamente 60 anos para um homem, o envelhecimento desacelera bruscamente, tanto que aos 9 a idade equivale a 65 anos humanos.</dd>
+        <dt>Qual a idade dos animais?</dt>
+        <dd>A cronologia canina segue mais ou menos assim: aos 2 anos, a idade equivale a 42 anos; aos 4 anos, 52; aos 7 anos, com idade equivalente a aproximadamente 60 anos para um homem, o envelhecimento desacelera bruscamente, tanto que aos 9 a idade equivale a 65 anos humanos.</dd>
+      </dl>
+
+    </section>
+
+    <section class="grid-section numeros" data-tab="scroll">
+      <h1 class="titulo">Números</h1>
+      <div class="numeros-grid">
+
+      </div>
+    </section>
+
+
+    <section class="grid-section contato" id="contato" data-tab="scroll">
+      <h1 class="titulo">Contato</h1>
+      <div class="mapa" data-tooltip aria-label="Endereço próximo ao estacionamento.">
+        <img src="./img/mapa.png" alt="">
+      </div>
+      <ul class="dados">
+        <li>contato@shirufunfa.com</li>
+        <li>+55 (21)98765-4621</li>
+        <li>Rua da Conxinchina</li>
+        <li>Machupitio-PR</li>
+        <li>Doe <span class="btc-preco">0</span> bitcoin para nos ajudar</li>
+        <li data-semana="1,2,3,4,5" data-horario="8,18">Seg à Sex das 8 às 18</li>
+      </ul>
+    </section>
+    <footer class="copy">
+      <p>Todos os direitos reservados.</p>
+    </footer>
+  </div>
+  <section class="modal-container" data-modal="container">
+    <div class="modal">
+      <button data-modal="fechar" class="fechar">X</button>
+      <form action="">
+        <label for="email">Email</label>
+        <input type="text" for="email" id="email">
+        <label for="senha">Senha</label>
+        <input type="password" for="senha" id="senha">
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Sempre que <script> possuir type="module" ele terá a configuração automatica de 'use strict', auxiliando a prevenção de erros -->
+  <script src="./main.js/main.js"></script>
+  <!-- <script type="module" src="./js/fetch-API.js"></script> -->
+
+</body>
+
+</html>
