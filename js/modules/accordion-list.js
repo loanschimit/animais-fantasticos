@@ -22,3 +22,4 @@ export default function accordionList2() {
     });
   }
 }
+console.log("testes");

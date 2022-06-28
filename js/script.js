@@ -20,9 +20,6 @@ import initDateObject from "./modules/date-object.js";
 import initAnimaisFetch from "../animais-fetch.js";
 
 import initBitcoinFetch from "../bitcoin-fetch.js";
-import WebpackInit from "../Deverwebpack.js";
-import BabelInit from "../babel.js";
-import GitInit from "../AulaGit.js";
 
 // import $ from "jquery";
 // import _ from "lodash";
@@ -46,9 +43,6 @@ initDropDownMenu();
 initMenuMobile();
 initDateObject();
 initAnimaisFetch();
-WebpackInit();
-BabelInit();
-GitInit();
 
 // Intervalos;
 // import initSetTimeOut from "./modules/settimeout-setinterval.js";
