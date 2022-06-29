@@ -3,7 +3,7 @@ import scrollWindow from "./modules/animacao-scroll.js";
 // Clicando na imagem surge o texto correspondente.
 import navtab from "./modules/nav-tab.js";
 // Scroll suave ao clicar em um link interno
-import linksDeDentro from "./modules/scroll-suave.js";
+import ScrollSuave from "./modules/scroll-suave.js";
 // Efeito ao clicar nas perguntas as respostas aparecem de forma suave
 import accordionList from "./modules/accordion-list.js";
 // Abre um modal com uma tela de login
@@ -21,21 +21,12 @@ import initAnimaisFetch from "../animais-fetch.js";
 
 import initBitcoinFetch from "../bitcoin-fetch.js";
 
-// import $ from "jquery";
-// import _ from "lodash";
-
-// $("nav").hide();
-
-// const diferenca = _.difference(
-//   ["Banana", "Morango", "Uva"],
-//   ["Banana", "Morango", "Manga"]
-// );
-// console.log(diferenca)
+const scrollSuave = new ScrollSuave(".js a[href^='#']");
+scrollSuave.init();
 
 initBitcoinFetch();
 scrollWindow();
 navtab();
-linksDeDentro();
 accordionList();
 initModal();
 initTooltip();

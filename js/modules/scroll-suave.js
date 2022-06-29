@@ -1,29 +1,33 @@
-export default function linksDeDentro() {
+export default class ScrollSuave {
   /* ↓ seleciona os itens que começam com o href "#" ↓ */
-  const linksInternos = document.querySelectorAll(".js a[href^='#'");
-
-  function scrollToSection(event) {
-    /* ↓ previne que vá direto através de um clique ↓ */
-    event.preventDefault();
-    /* ↓ pega o href do que foi clicado ↓ */
-    const href = this.getAttribute("href");
-    /* ↓ seleciona o item através do href que foi clicado ↓ */
-    const section = document.querySelector(href);
-    /* ↓ define a velocidade 'behavior' e onde vai parar 'block' ↓ */
-    section.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-    /* ↓ outra maneira diferente do scrollIntoView ↓ */
-    // forma alternativa
-    // const topo = section.offsetTop
-    // window.scrollTo({
-    //   top: topo,
-    //   behavior: 'smooth',
-    // })
+  constructor(links, options) {
+    this.linksInternos = document.querySelectorAll(links);
+    if (options === undefined) {
+      this.options = { behavior: "smooth", block: "start" };
+    } else {
+      this.options = options;
+    }
+    this.scrollToSection = this.scrollToSection.bind(this);
   }
-  /* ↓ cria um evento de clique e uma função ↓ */
-  linksInternos.forEach((item) => {
-    item.addEventListener("click", scrollToSection);
-  });
+
+  scrollToSection(event) {
+    event.preventDefault();
+
+    const href = event.currentTarget.getAttribute("href");
+
+    const section = document.querySelector(href);
+    section.scrollIntoView(this.options);
+  }
+
+  addLinkEvent() {
+    /* ↓ cria um evento de clique e uma função ↓ */
+    this.linksInternos.forEach((item) => {
+      item.addEventListener("click", this.scrollToSection);
+    });
+  }
+
+  init() {
+    if (this.linksInternos.length) this.addLinkEvent();
+    return this;
+  }
 }
