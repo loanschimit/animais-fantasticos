@@ -1,24 +1,28 @@
-export default function accordionList() {
-  const accordion = document.querySelectorAll("[data-anime='accordion'] dt");
-  // eslint-disable-next-line quotes
-  const ativado = "ativo";
-
-  /* ↓ Pega o item identificado através do forEach() e adc ou rm a classe ao clicar ↓ */
-  function activeAccordion() {
-    this.classList.toggle(ativado);
-    this.nextElementSibling.classList.toggle(ativado);
+export default class Accordion {
+  constructor(list) {
+    this.accordion = document.querySelectorAll(list);
+    this.ativado = "ativo";
   }
 
-  /* ↓ Condição que verifica se accordion existe ↓ */
-  if (accordion.length) {
-    /* ↓ Adiciona class em accordion e no primeiro depois dele(dd), serão o padrão aberto ↓ */
-    accordion[0].classList.add(ativado);
-    accordion[0].nextElementSibling.classList.add(ativado);
+  toggleAccordion(item) {
+    item.classList.toggle(this.ativado);
+    item.nextElementSibling.classList.toggle(this.ativado);
+  }
+  // adiciona os eventos ao accordion
 
-    /* ↓ Cria um loop de click, selecionando 1 item dentro de accordion ↓ */
-    accordion.forEach((item) => {
+  addAccordionEvent() {
+    this.accordion.forEach((item) => {
       // eslint-disable-next-line quotes
-      item.addEventListener("click", activeAccordion);
+      item.addEventListener("click", () => this.toggleAccordion(item));
     });
+  }
+
+  // iniciar função
+  init() {
+    if (this.accordion.length) {
+      // ativar primeiro item
+      this.toggleAccordion(this.accordion[0]);
+      this.addAccordionEvent();
+    }
   }
 }
