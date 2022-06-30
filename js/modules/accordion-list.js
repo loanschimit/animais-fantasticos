@@ -1,4 +1,4 @@
-export default function accordionList2() {
+export default function accordionList() {
   const accordion = document.querySelectorAll("[data-anime='accordion'] dt");
   // eslint-disable-next-line quotes
   const ativado = "ativo";

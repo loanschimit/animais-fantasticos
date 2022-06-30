@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 // Efeito ao scroll de surgimento dos itens da pagina
 import scrollWindow from "./modules/animacao-scroll.js";
 // Clicando na imagem surge o texto correspondente.
@@ -24,16 +25,16 @@ import initBitcoinFetch from "../bitcoin-fetch.js";
 const scrollSuave = new ScrollSuave(".js a[href^='#']");
 scrollSuave.init();
 
-initBitcoinFetch();
-scrollWindow();
-navtab();
 accordionList();
+navtab();
 initModal();
 initTooltip();
 initDropDownMenu();
 initMenuMobile();
 initDateObject();
 initAnimaisFetch();
+initBitcoinFetch();
+scrollWindow();
 
 // Intervalos;
 // import initSetTimeOut from "./modules/settimeout-setinterval.js";
