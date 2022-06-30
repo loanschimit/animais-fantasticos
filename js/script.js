@@ -6,7 +6,6 @@ import navtab from "./modules/nav-tab.js";
 // Scroll suave ao clicar em um link interno
 import ScrollSuave from "./modules/scroll-suave.js";
 // Efeito ao clicar nas perguntas as respostas aparecem de forma suave
-import accordionList from "./modules/accordion-list.js";
 // Abre um modal com uma tela de login
 import initModal from "./modules/modal.js";
 // Cria uma caixa de texto ao passar o mouse por cima
@@ -22,10 +21,17 @@ import initAnimaisFetch from "../animais-fetch.js";
 
 import initBitcoinFetch from "../bitcoin-fetch.js";
 
+import Accordion from "./modules/accordion-list.js";
+
 const scrollSuave = new ScrollSuave(".js a[href^='#']");
+
 scrollSuave.init();
 
-accordionList();
+// accordionList();
+// "[data-anime='accordion'] dt"
+const accordion = new Accordion("[data-anime='accordion'] dt");
+accordion.init();
+
 navtab();
 initModal();
 initTooltip();
