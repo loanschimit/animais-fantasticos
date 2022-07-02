@@ -1,27 +1,33 @@
-export default function navtab() {
-  const tabmenu = document.querySelectorAll("[data-tab='menu'] li img");
-  const tabcontent = document.querySelectorAll("[data-tab='content'] section");
-
-  function activeTab(index) {
-    /* ↓ caminho do dataset(show-down ou show-right) ↓ */
-    const direcao = tabcontent[index].dataset.anime;
-    /* ↓ remove a classe determinada de todos os itens ↓ */
-    tabcontent.forEach((section) => {
-      section.classList.remove("ativo", direcao);
-    });
-    /* ↓ adiciona as classes determinadas ao item clicado ↓ */
-    tabcontent[index].classList.add("ativo", direcao);
+export default class TabNav {
+  constructor(menu, content) {
+    this.tabmenu = document.querySelectorAll(menu);
+    this.tabcontent = document.querySelectorAll(content);
+    this.active = "ativo";
   }
-  /* ↓ verifica se ambos existem ↓ */
-  if (tabmenu.length && tabcontent.length) {
+
+  activeTab(index) {
+    const direcao = this.tabcontent[index].dataset.anime;
+    this.tabcontent.forEach((section) => {
+      section.classList.remove(this.active, direcao);
+    });
+    this.tabcontent[index].classList.add(this.active, direcao);
+  }
+
+  addEventTab() {
     /* ↓ adiciona a classe ao item para ser o padrão ↓ */
-    tabcontent[0].classList.add("ativo");
+    this.tabcontent[0].classList.add(this.active);
 
     /* ↓ seleciona o item da foto que for clicada e transfere o index ↓ */
-    tabmenu.forEach((itemMenu, index) => {
-      itemMenu.addEventListener("click", () => {
-        activeTab(index);
-      });
+    this.tabmenu.forEach((itemMenu, index) => {
+      itemMenu.addEventListener("click", () => this.activeTab(index));
     });
+  }
+
+  init() {
+    if (this.tabmenu.length && this.tabcontent.length) {
+      // ativar primeiro item
+      this.activeTab(0);
+      this.addEventTab();
+    }
   }
 }
