@@ -6,7 +6,6 @@ import scrollWindow from "./modules/animacao-scroll.js";
 import ScrollSuave from "./modules/scroll-suave.js";
 // Efeito ao clicar nas perguntas as respostas aparecem de forma suave
 // Abre um modal com uma tela de login
-import initModal from "./modules/modal.js";
 // Cria uma caixa de texto ao passar o mouse por cima
 import initTooltip from "./modules/tooltip.js";
 // Menu down
@@ -24,6 +23,8 @@ import Accordion from "./modules/accordion-list.js";
 
 import TabNav from "./modules/nav-tab.js";
 
+import InitModal from "./modules/modal.js";
+
 const scrollSuave = new ScrollSuave(".js a[href^='#']");
 
 scrollSuave.init();
@@ -38,9 +39,14 @@ const tabNav = new TabNav(
   "[data-tab='content'] section"
 );
 tabNav.init();
-
+const initModal = new InitModal(
+  "a[data-modal='abrir']",
+  ".fechar",
+  "[class='modal-container']"
+);
+initModal.init();
 // navtab();
-initModal();
+// initModal();
 initTooltip();
 initDropDownMenu();
 initMenuMobile();

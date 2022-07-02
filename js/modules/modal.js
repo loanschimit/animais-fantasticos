@@ -1,18 +1,41 @@
 /* eslint-disable quotes */
-export default function initModal() {
-  const loginBotao = document.querySelector('a[data-modal="abrir"]');
-  const fecharBotao = document.querySelector(".fechar");
-  const sectionLogin = document.querySelector('[class="modal-container"]');
+export default class InitModal {
+  constructor(open, close, section) {
+    this.loginBotao = document.querySelector(open);
+    this.fecharBotao = document.querySelector(close);
+    this.sectionLogin = document.querySelector(section);
+    // bind(this) tras ao callback para fazer referência ao obj da class(InitModal)
+    this.btnToggleModal = this.btnToggleModal.bind(this);
+    this.targetModal = this.targetModal.bind(this);
+  }
 
-  function toggleModal(event) {
+  // previne o padrão e ativa o toggleModal
+  btnToggleModal(event) {
     event.preventDefault();
-    sectionLogin.classList.toggle("ativo");
+    this.toggleModal();
   }
 
-  function targetModal(event) {
-    if (this === event.target) toggleModal(event);
+  // adiciona e remove a class
+  toggleModal() {
+    this.sectionLogin.classList.toggle("ativo");
   }
-  loginBotao.addEventListener("click", toggleModal);
-  fecharBotao.addEventListener("click", toggleModal);
-  sectionLogin.addEventListener("click", targetModal);
+
+  // verifica se o alvo possui evento de target e executa btnToggleModal
+  targetModal(event) {
+    if (this.sectionLogin === event.target) this.toggleModal();
+  }
+
+  // adc eventos
+  addEventModal() {
+    this.loginBotao.addEventListener("click", this.btnToggleModal);
+    this.fecharBotao.addEventListener("click", this.btnToggleModal);
+    this.sectionLogin.addEventListener("click", this.targetModal);
+  }
+
+  init() {
+    if (this.fecharBotao && this.loginBotao && this.sectionLogin) {
+      this.addEventModal();
+    }
+    return this;
+  }
 }
