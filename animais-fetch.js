@@ -1,5 +1,6 @@
 // Mostra os numeros com animação
-import initNumeros from "./js/modules/numeros.js";
+// eslint-disable-next-line import/extensions
+import AnimaNumeros from "./js/modules/numeros.js";
 
 export default function initAnimaisFetch() {
   function createAnimal(animal) {
@@ -20,7 +21,13 @@ export default function initAnimaisFetch() {
         numerosGrid.appendChild(divAnimal);
       });
       // Inicia números só apois o fetch()
-      initNumeros();
+      const animaNumeros = new AnimaNumeros(
+        "[data-numero]",
+        ".numeros",
+        // eslint-disable-next-line comma-dangle
+        "ativo"
+      );
+      animaNumeros.init();
     } catch (erro) {
       // eslint-disable-next-line no-console
       console.log(erro);
