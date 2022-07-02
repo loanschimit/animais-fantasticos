@@ -42,6 +42,7 @@ tabNav.init();
 const initModal = new InitModal(
   "a[data-modal='abrir']",
   ".fechar",
+  // eslint-disable-next-line comma-dangle
   "[class='modal-container']"
 );
 initModal.init();
