@@ -2,7 +2,6 @@
 // Efeito ao scroll de surgimento dos itens da pagina
 import scrollWindow from "./modules/animacao-scroll.js";
 // Clicando na imagem surge o texto correspondente.
-import navtab from "./modules/nav-tab.js";
 // Scroll suave ao clicar em um link interno
 import ScrollSuave from "./modules/scroll-suave.js";
 // Efeito ao clicar nas perguntas as respostas aparecem de forma suave
@@ -23,6 +22,8 @@ import initBitcoinFetch from "../bitcoin-fetch.js";
 
 import Accordion from "./modules/accordion-list.js";
 
+import TabNav from "./modules/nav-tab.js";
+
 const scrollSuave = new ScrollSuave(".js a[href^='#']");
 
 scrollSuave.init();
@@ -31,8 +32,14 @@ scrollSuave.init();
 // "[data-anime='accordion'] dt"
 const accordion = new Accordion("[data-anime='accordion'] dt");
 accordion.init();
+const tabNav = new TabNav(
+  "[data-tab='menu'] li img",
+  // eslint-disable-next-line comma-dangle
+  "[data-tab='content'] section"
+);
+tabNav.init();
 
-navtab();
+// navtab();
 initModal();
 initTooltip();
 initDropDownMenu();
