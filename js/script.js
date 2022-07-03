@@ -14,7 +14,6 @@ import initMenuMobile from "./modules/menu-mobile.js";
 // Verifica a data e hora de funcionamento com a data atual
 import initDateObject from "./modules/date-object.js";
 
-import initAnimaisFetch from "../animais-fetch.js";
 
 import initBitcoinFetch from "../bitcoin-fetch.js";
 
@@ -25,6 +24,8 @@ import TabNav from "./modules/nav-tab.js";
 import InitModal from "./modules/modal.js";
 
 import InitTooltip from "./modules/tooltip.js";
+
+import InitAnimaisFetch from "../animais-fetch.js";
 
 const scrollSuave = new ScrollSuave(".js a[href^='#']");
 
@@ -51,13 +52,17 @@ initModal.init();
 const initTooltip = new InitTooltip("[data-tooltip]");
 initTooltip.init();
 
+const initAnimaisFetch = new InitAnimaisFetch("[data-tooltip]");
+initTooltip.init();
+
+
 // navtab();
 // initModal();
 // initTooltip();
 initDropDownMenu();
 initMenuMobile();
 initDateObject();
-initAnimaisFetch();
+// initAnimaisFetch();
 initBitcoinFetch();
 scrollWindow();
 

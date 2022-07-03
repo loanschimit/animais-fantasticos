@@ -2,7 +2,7 @@
 // eslint-disable-next-line import/extensions
 import AnimaNumeros from "./js/modules/numeros.js";
 
-export default function initAnimaisFetch() {
+export default function InitAnimaisFetch() {
   function createAnimal(animal) {
     const div = document.createElement("div");
     div.classList.add("numero-animal");
