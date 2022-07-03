@@ -14,8 +14,6 @@ import initMenuMobile from "./modules/menu-mobile.js";
 // Verifica a data e hora de funcionamento com a data atual
 import initDateObject from "./modules/date-object.js";
 
-import initAnimaisFetch from "../animais-fetch.js";
-
 import initBitcoinFetch from "../bitcoin-fetch.js";
 
 import Accordion from "./modules/accordion-list.js";
@@ -25,6 +23,8 @@ import TabNav from "./modules/nav-tab.js";
 import InitModal from "./modules/modal.js";
 
 import InitTooltip from "./modules/tooltip.js";
+
+import fetchAnimais from "../animais-fetch.js";
 
 const scrollSuave = new ScrollSuave(".js a[href^='#']");
 
@@ -57,7 +57,7 @@ initTooltip.init();
 initDropDownMenu();
 initMenuMobile();
 initDateObject();
-initAnimaisFetch();
+fetchAnimais("./arquivo.json", ".numeros-grid");
 initBitcoinFetch();
 scrollWindow();
 
