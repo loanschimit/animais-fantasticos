@@ -1,6 +1,5 @@
 /* eslint-disable import/extensions */
 // Efeito ao scroll de surgimento dos itens da pagina
-import scrollWindow from "./modules/animacao-scroll.js";
 // Clicando na imagem surge o texto correspondente.
 // Scroll suave ao clicar em um link interno
 import ScrollSuave from "./modules/scroll-suave.js";
@@ -25,6 +24,8 @@ import InitTooltip from "./modules/tooltip.js";
 import fetchAnimais from "../animais-fetch.js";
 
 import fetchBitcoin from "../bitcoin-fetch.js";
+
+import ScrollAnima from "./modules/scroll-anima.js";
 
 const scrollSuave = new ScrollSuave(".js a[href^='#']");
 
@@ -51,6 +52,9 @@ initModal.init();
 const initTooltip = new InitTooltip("[data-tooltip]");
 initTooltip.init();
 
+const scrollAnima = new ScrollAnima("[data-tab='scroll']", window.innerHeight * 0.6, "ativo");
+scrollAnima.init();
+// ScrollAnima();
 // navtab();
 // initModal();
 // initTooltip();
@@ -59,7 +63,6 @@ initMenuMobile();
 initDateObject();
 fetchAnimais("./arquivo.json", ".numeros-grid");
 fetchBitcoin("https://www.blockchain.com/ticker", ".btc-preco");
-scrollWindow();
 
 // Intervalos;
 // import initSetTimeOut from "./modules/settimeout-setinterval.js";
