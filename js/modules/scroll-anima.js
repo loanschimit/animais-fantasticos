@@ -5,31 +5,45 @@ export default class ScrollAnima {
     /* ↓ calculo para pre-determinar um posicionamento ↓ */
     this.windowDistancia = windowDistancia;
     this.active = active;
-    this.animaScroll = this.animaScroll.bind(this);
+    this.checkDistance = this.checkDistance.bind(this);
   }
 
-  animaScroll() {
-    /* ↓ seleciona o item dentro do objeto e determina quando deve ocorrer a ação ao scroll ↓ */
-    this.sections.forEach((section) => {
-      // eslint-disable-next-line operator-linebreak
-      const sectionTop =
-        section.getBoundingClientRect().top - this.windowDistancia;
-      /* ↓ determina o que deve ocorrer atraves de uma condição ↓ */
-      if (sectionTop < 0) {
-        section.classList.add(this.active);
-      } else if (section.classList.contains(this.active)) {
-        section.classList.remove(this.active);
+  // pega a distancia através de cada um item de sections relacionado ao topo da pagina e retorna
+  getDistance() {
+    this.distance = [...this.sections].map((section) => {
+      const offset = section.offsetTop;
+      return {
+        element: section,
+        offset: Math.floor(offset - this.windowDistancia),
+      };
+    });
+  }
+
+  // verifica a distancia de cada objeto e adiciona classe quando eles devem aparecer
+  checkDistance() {
+    console.log();
+    this.distance.forEach((item) => {
+      if (window.pageYOffset > item.offset) {
+        item.element.classList.add(this.active);
+      } else if (item.element.classList.contains(this.active)) {
+        item.element.classList.remove(this.active);
       }
     });
   }
-  /* ↓ verifica se sections existe ↓ */
 
   init() {
     if (this.sections.length) {
-      this.animaScroll();
+      this.getDistance();
+      this.checkDistance();
       /* ↓ ativa função ↓ */
       /* ↓ determina que a função de cima ocorrerá atraves de scroll ↓ */
-      window.addEventListener("scroll", this.animaScroll);
+      window.addEventListener("scroll", this.checkDistance);
     }
+    return this;
+  }
+
+  // remove o evento de scroll
+  stop() {
+    window.removeEventListener("scroll", this.checkDistance);
   }
 }
