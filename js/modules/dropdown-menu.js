@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 import removeActive from "./outside-click.js";
 
 export default class InitDropDownMenu {
@@ -15,10 +14,12 @@ export default class InitDropDownMenu {
   // ativa o dropdown menu e adiciona a função que observa o clique fora dele
   activeDropdownMenu(event) {
     event.preventDefault(); // previne o padrão
-    event.currentTarget.classList.add(this.classe);
+    const element = event.currentTarget;
+    element.classList.add(this.classe);
     // 6) Remove a classe  de this através callback
-    removeActive(event.currentTarget, this.events, () => {
-      event.target.classList.remove(this.classe);
+
+    removeActive(element, this.events, () => {
+      element.classList.remove(this.classe);
     });
   }
 
