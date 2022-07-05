@@ -9,7 +9,6 @@ import ScrollSuave from "./modules/scroll-suave.js";
 // Menu down
 // Menu Mobile
 // Verifica a data e hora de funcionamento com a data atual
-import initDateObject from "./modules/date-object.js";
 
 import Accordion from "./modules/accordion-list.js";
 
@@ -28,6 +27,8 @@ import ScrollAnima from "./modules/scroll-anima.js";
 import InitDropDownMenu from "./modules/dropdown-menu.js";
 
 import InitMenuMobile from "./modules/menu-mobile.js";
+
+import InitDateObject from "./modules/date-object.js";
 
 const scrollSuave = new ScrollSuave(".js a[href^='#']");
 
@@ -74,7 +75,9 @@ const initMenuMobile = new InitMenuMobile(
 );
 initMenuMobile.init();
 
-initDateObject();
+const initDateObject = new InitDateObject("[data-semana]", "aberto");
+initDateObject.init();
+
 fetchAnimais("./arquivo.json", ".numeros-grid");
 fetchBitcoin("https://www.blockchain.com/ticker", ".btc-preco");
 
