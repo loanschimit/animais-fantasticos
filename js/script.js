@@ -8,7 +8,6 @@ import ScrollSuave from "./modules/scroll-suave.js";
 // Cria uma caixa de texto ao passar o mouse por cima
 // Menu down
 // Menu Mobile
-import initMenuMobile from "./modules/menu-mobile.js";
 // Verifica a data e hora de funcionamento com a data atual
 import initDateObject from "./modules/date-object.js";
 
@@ -27,6 +26,8 @@ import fetchBitcoin from "../bitcoin-fetch.js";
 import ScrollAnima from "./modules/scroll-anima.js";
 
 import InitDropDownMenu from "./modules/dropdown-menu.js";
+
+import InitMenuMobile from "./modules/menu-mobile.js";
 
 const scrollSuave = new ScrollSuave(".js a[href^='#']");
 
@@ -53,17 +54,26 @@ initModal.init();
 const initTooltip = new InitTooltip("[data-tooltip]");
 initTooltip.init();
 
-const scrollAnima = new ScrollAnima("[data-tab='scroll']", window.innerHeight * 0.6, "ativo");
+const scrollAnima = new ScrollAnima(
+  "[data-tab='scroll']",
+  window.innerHeight * 0.6,
+  "ativo"
+);
 scrollAnima.init();
 
-const initDropDownMenu = new InitDropDownMenu("[data-dropdown]", "active", ["touchstart", "click"]);
+const initDropDownMenu = new InitDropDownMenu("[data-dropdown]", "active", [
+  "touchstart",
+  "click",
+]);
 initDropDownMenu.init();
-// ScrollAnima();
-// navtab();
-// initModal();
-// initTooltip();
-// initDropDownMenu();
-initMenuMobile();
+
+const initMenuMobile = new InitMenuMobile(
+  "[data-menu='button']",
+  "[data-menu='list']",
+  ["click", "touchstart"]
+);
+initMenuMobile.init();
+
 initDateObject();
 fetchAnimais("./arquivo.json", ".numeros-grid");
 fetchBitcoin("https://www.blockchain.com/ticker", ".btc-preco");
