@@ -1,21 +1,48 @@
 /* eslint-disable quotes */
-export default function initDateObject() {}
-// Seletores
-const funcionamento = document.querySelector("[data-semana]");
-const diasSemana = funcionamento.dataset.semana.split(",").map(Number);
-const horarioSemana = funcionamento.dataset.horario.split(",").map(Number);
+export default class InitDateObject {
+  constructor(funcionamento, active) {
+    this.funcionamento = document.querySelector(funcionamento);
+    this.active = active;
+  }
 
-const dataAgora = new Date(); // Data atual
-const diaAgora = dataAgora.getDay(); // Dia atual
-const horarioAgora = dataAgora.getHours(); // hora atual
+  dadosFuncionamento() {
+    this.diasSemana = this.funcionamento.dataset.semana.split(",").map(Number);
+    this.horarioSemana = this.funcionamento.dataset.horario
+      .split(",")
+      .map(Number);
+  }
 
-// Verifica se o horario atual está de acordo com o horario de funcionamento
-const horarioAberto = horarioAgora >= horarioSemana[0] && horarioAgora < horarioSemana[1];
+  dadosAgora() {
+    this.dataAgora = new Date(); // Data atual
+    this.diaAgora = this.dataAgora.getDay(); // Dia atual
+    this.horarioAgora = this.dataAgora.getUTCHours() - 3; // hora atual
+  }
 
-// Verifica se o dia atual é um dia de funcionamento
-const EstaAberto = diasSemana.indexOf(diaAgora) !== -1;
+  estaAberto() {
+    // eslint-disable-next-line operator-linebreak
+    this.horarioAberto =
+      // eslint-disable-next-line operator-linebreak
+      this.horarioAgora >= this.horarioSemana[0] &&
+      this.horarioAgora < this.horarioSemana[1];
 
-// Condição true, adiciona a classe que é responsavél pela mudançã no pseudo elemento informativo
-if (EstaAberto && horarioAberto) {
-  funcionamento.classList.add("aberto");
+    // Verifica se o dia atual é um dia de funcionamento
+    this.EstaAberto = this.diasSemana.indexOf(this.diaAgora) !== -1;
+  }
+  // Verifica se o horario atual está de acordo com o horario de funcionamento
+
+  ativaAberto() {
+    this.estaAberto();
+    if (this.horarioAberto) {
+      this.funcionamento.classList.add(this.active);
+    }
+  }
+
+  init() {
+    if (this.funcionamento) {
+      this.dadosAgora();
+      this.dadosFuncionamento();
+      this.ativaAberto();
+    }
+    return this;
+  }
 }
