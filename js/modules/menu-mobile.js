@@ -12,7 +12,8 @@ export default class InitMenuMobile {
     this.active = "active";
   }
 
-  openMenu() {
+  openMenu(event) {
+    event.preventDefault();
     // console.log(event.currentTarget);
     this.menuList.classList.add(this.active);
     this.menuButton.classList.add(this.active);
