@@ -30,6 +30,8 @@ import InitMenuMobile from "./modules/menu-mobile.js";
 
 import InitDateObject from "./modules/date-object.js";
 
+import SlideNav from "./modules/slide.js";
+
 const scrollSuave = new ScrollSuave(".js a[href^='#']");
 
 scrollSuave.init();
@@ -81,14 +83,7 @@ initDateObject.init();
 fetchAnimais("./arquivo.json", ".numeros-grid");
 fetchBitcoin("https://www.blockchain.com/ticker", ".btc-preco");
 
-// Intervalos;
-// import initSetTimeOut from "./modules/settimeout-setinterval.js";
-//  initSetTimeOut();
-
-// #####
-// import initForm from "./modules/form.js";
-// initForm();
-
-// Verifica a data e hora de funcionamento com a data atual
-// import initButtonCreator from "./modules/button-creator.js";
-// initButtonCreator();
+const slide = new SlideNav(".slide", ".slide-wrapper");
+slide.init();
+// slide.addArrow(".prev", ".next");
+slide.addControl(".custom-controls");
